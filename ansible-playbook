@@ -1,0 +1,14 @@
+---
+- name: "Play 1- cgi website configuration"  
+  hosts: webservers
+  become: yes
+  tasks:
+    - yum:
+        name: "{{ item }}"
+        state: present
+    with_items:
+      - httpd
+      - vim
+      - wget
+      - tree
+
